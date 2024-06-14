@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13529"/>
+        <capability name="box content view" minToolsVersion="7.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="MyWindowController">
+            <connections>
+                <outlet property="buttonBox" destination="254" id="297"/>
+                <outlet property="buttonMenu" destination="199" id="216"/>
+                <outlet property="colorBox" destination="302" id="304"/>
+                <outlet property="dropDownButton" destination="329" id="330"/>
+                <outlet property="indicatorBox" destination="316" id="323"/>
+                <outlet property="levelAdjuster" destination="315" id="320"/>
+                <outlet property="nibBasedButton" destination="245" id="fLc-Ry-f4z"/>
+                <outlet property="nibBasedButtonSquare" destination="246" id="258"/>
+                <outlet property="nibBasedColorWell" destination="298" id="307"/>
+                <outlet property="nibBasedIndicator" destination="311" id="319"/>
+                <outlet property="nibBasedPopUpDown" destination="100385" id="100392"/>
+                <outlet property="nibBasedPopUpRight" destination="100365" id="100370"/>
+                <outlet property="nibBasedSegControl" destination="263" id="264"/>
+                <outlet property="placeHolder1" destination="213" id="225"/>
+                <outlet property="placeHolder2" destination="222" id="226"/>
+                <outlet property="placeHolder3" destination="247" id="261"/>
+                <outlet property="placeHolder4" destination="248" id="262"/>
+                <outlet property="placeHolder5" destination="265" id="269"/>
+                <outlet property="placeHolder6" destination="280" id="284"/>
+                <outlet property="placeHolder7" destination="300" id="306"/>
+                <outlet property="placeHolder8" destination="314" id="325"/>
+                <outlet property="popupBox" destination="243" id="296"/>
+                <outlet property="segmentBox" destination="266" id="268"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Button Madness" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="7" userLabel="TestWindow">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="98" y="652" width="711" height="382"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+            <value key="minSize" type="size" width="213" height="107"/>
+            <view key="contentView" id="8">
+                <rect key="frame" x="0.0" y="0.0" width="711" height="382"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <box fixedFrame="YES" title="NSPopUpButton" translatesAutoresizingMaskIntoConstraints="NO" id="243">
+                        <rect key="frame" x="17" y="149" width="201" height="222"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <view key="contentView" id="LYy-8d-aml">
+                            <rect key="frame" x="2" y="2" width="197" height="205"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="213">
+                                    <rect key="frame" x="112" y="112" width="65" height="59"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </customView>
+                                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="222">
+                                    <rect key="frame" x="112" y="43" width="65" height="59"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </customView>
+                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="229">
+                                    <rect key="frame" x="67" y="16" width="87" height="18"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <buttonCell key="cell" type="check" title="Pull Down" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" state="on" inset="2" id="100229">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="smallSystem"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="pullsDownAction:" target="-2" id="235"/>
+                                    </connections>
+                                </button>
+                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="292">
+                                    <rect key="frame" x="18" y="179" width="74" height="14"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Nib-Based:" id="100292">
+                                        <font key="font" metaFont="smallSystem"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="293">
+                                    <rect key="frame" x="110" y="179" width="74" height="14"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Code-Based:" id="100293">
+                                        <font key="font" metaFont="smallSystem"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                                <popUpButton fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="100365">
+                                    <rect key="frame" x="16" y="43" width="65" height="59"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <popUpButtonCell key="cell" type="square" bezelStyle="shadowlessSquare" alignment="center" lineBreakMode="truncatingTail" borderStyle="border" inset="2" pullsDown="YES" preferredEdge="maxX" id="100366">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="menu"/>
+                                        <menu key="menu" title="OtherViews" id="100367"/>
+                                    </popUpButtonCell>
+                                    <connections>
+                                        <outlet property="menu" destination="199" id="8bv-rZ-d5s"/>
+                                    </connections>
+                                </popUpButton>
+                                <popUpButton fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="100385">
+                                    <rect key="frame" x="17" y="113" width="65" height="58"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <popUpButtonCell key="cell" type="square" bezelStyle="shadowlessSquare" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" inset="2" pullsDown="YES" selectedItem="100388" id="100386">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="menu"/>
+                                        <menu key="menu" title="OtherViews" id="100387">
+                                            <items>
+                                                <menuItem state="on" hidden="YES" id="100388"/>
+                                                <menuItem title="Item 2" id="100389"/>
+                                                <menuItem title="Item 3" id="100390"/>
+                                            </items>
+                                        </menu>
+                                    </popUpButtonCell>
+                                </popUpButton>
+                            </subviews>
+                        </view>
+                    </box>
+                    <box fixedFrame="YES" title="NSButton" translatesAutoresizingMaskIntoConstraints="NO" id="254">
+                        <rect key="frame" x="220" y="149" width="283" height="222"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <view key="contentView" id="MSs-DU-plw">
+                            <rect key="frame" x="2" y="2" width="279" height="205"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="245">
+                                    <rect key="frame" x="16" y="119" width="112" height="52"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <buttonCell key="cell" type="smallSquare" title="NSButton" alternateTitle="(pressed)" bezelStyle="smallSquare" image="moof" imagePosition="left" alignment="center" alternateImage="moof2" borderStyle="border" sound="Pop" inset="2" id="100245">
+                                        <behavior key="behavior" lightByContents="YES"/>
+                                        <font key="font" metaFont="smallSystem"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="buttonAction:" target="-2" id="273"/>
+                                    </connections>
+                                </button>
+                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="246">
+                                    <rect key="frame" x="16" y="59" width="112" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <buttonCell key="cell" type="square" title="NSButton" alternateTitle="(pressed)" bezelStyle="shadowlessSquare" image="moof" imagePosition="left" alignment="center" alternateImage="moof2" borderStyle="border" sound="Pop" inset="2" id="100246">
+                                        <behavior key="behavior" lightByContents="YES"/>
+                                        <font key="font" metaFont="smallSystem"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="buttonAction:" target="-2" id="274"/>
+                                    </connections>
+                                </button>
+                                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="247">
+                                    <rect key="frame" x="148" y="120" width="112" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </customView>
+                                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="248">
+                                    <rect key="frame" x="149" y="59" width="111" height="51"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </customView>
+                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="253">
+                                    <rect key="frame" x="105" y="36" width="80" height="18"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <buttonCell key="cell" type="check" title="Use Icon" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" state="on" inset="2" id="100253">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="smallSystem"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="useIconAction:" target="-2" id="256"/>
+                                    </connections>
+                                </button>
+                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="294">
+                                    <rect key="frame" x="43" y="180" width="69" height="14"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Nib-Based:" id="100294">
+                                        <font key="font" metaFont="smallSystem"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="295">
+                                    <rect key="frame" x="169" y="180" width="82" height="14"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Code-Based:" id="100295">
+                                        <font key="font" metaFont="smallSystem"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="329" customClass="DropDownButton">
+                                    <rect key="frame" x="86" y="10" width="111" height="20"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <buttonCell key="cell" type="smallSquare" title="DropDownButton" bezelStyle="smallSquare" alignment="center" controlSize="small" borderStyle="border" inset="2" id="100329">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="smallSystem"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="dropDownAction:" target="-2" id="331"/>
+                                        <outlet property="menu" destination="199" id="332"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </view>
+                    </box>
+                    <box fixedFrame="YES" title="NSSegmentedControl" translatesAutoresizingMaskIntoConstraints="NO" id="266">
+                        <rect key="frame" x="17" y="16" width="367" height="129"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <view key="contentView" id="gzz-Br-cBB">
+                            <rect key="frame" x="2" y="2" width="363" height="112"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="263">
+                                    <rect key="frame" x="90" y="74" width="261" height="24"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="100263">
+                                        <font key="font" metaFont="system"/>
+                                        <segments>
+                                            <segment label="One" imageScaling="none" width="83" tag="1"/>
+                                            <segment label="Two" imageScaling="none" width="83" tag="2"/>
+                                            <segment label="Three" imageScaling="none" width="83" tag="3"/>
+                                        </segments>
+                                    </segmentedCell>
+                                    <connections>
+                                        <action selector="segmentAction:" target="-2" id="275"/>
+                                    </connections>
+                                </segmentedControl>
+                                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="265">
+                                    <rect key="frame" x="92" y="41" width="255" height="24"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </customView>
+                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="271">
+                                    <rect key="frame" x="7" y="79" width="86" height="14"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Nib-Based:" id="100271">
+                                        <font key="font" metaFont="smallSystem"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="272">
+                                    <rect key="frame" x="7" y="46" width="86" height="14"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Code-Based:" id="100272">
+                                        <font key="font" metaFont="smallSystem"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="333">
+                                    <rect key="frame" x="178" y="9" width="84" height="28"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <buttonCell key="cell" type="push" title="Unselect" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" inset="2" id="100333">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="smallSystem"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="unselectAction:" target="-2" id="334"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </view>
+                    </box>
+                    <box fixedFrame="YES" title="Grouping" translatesAutoresizingMaskIntoConstraints="NO" id="281" userLabel="Group Box">
+                        <rect key="frame" x="505" y="259" width="189" height="112"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <view key="contentView" id="e8I-dS-Umd">
+                            <rect key="frame" x="2" y="2" width="185" height="95"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="280">
+                                    <rect key="frame" x="98" y="14" width="71" height="45"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </customView>
+                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="309">
+                                    <rect key="frame" x="17" y="70" width="68" height="14"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Nib-Based:" id="100309">
+                                        <font key="font" metaFont="smallSystem"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="310">
+                                    <rect key="frame" x="97" y="70" width="81" height="14"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Code-Based:" id="100310">
+                                        <font key="font" metaFont="smallSystem"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                                <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iXt-sF-rTT">
+                                    <rect key="frame" x="16" y="19" width="65" height="40"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="wg3-Eq-luo">
+                                            <rect key="frame" x="-1" y="23" width="66" height="18"/>
+                                            <buttonCell key="cell" type="radio" title="Radio 1" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="Aad-6A-0Cs">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="radioGroupAction:" target="-2" id="U5M-Cp-nnT"/>
+                                            </connections>
+                                        </button>
+                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="laW-8S-8gZ">
+                                            <rect key="frame" x="-1" y="-1" width="68" height="18"/>
+                                            <buttonCell key="cell" type="radio" title="Radio 2" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="UgY-Vk-3Zd">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="radioGroupAction:" target="-2" id="XDP-0d-Phi"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <visibilityPriorities>
+                                        <integer value="1000"/>
+                                        <integer value="1000"/>
+                                    </visibilityPriorities>
+                                    <customSpacing>
+                                        <real value="3.4028234663852886e+38"/>
+                                        <real value="3.4028234663852886e+38"/>
+                                    </customSpacing>
+                                </stackView>
+                            </subviews>
+                        </view>
+                    </box>
+                    <box fixedFrame="YES" title="NSColorWell" translatesAutoresizingMaskIntoConstraints="NO" id="302">
+                        <rect key="frame" x="505" y="149" width="190" height="104"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <view key="contentView" id="xCs-A1-cm9">
+                            <rect key="frame" x="2" y="2" width="186" height="87"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="298">
+                                    <rect key="frame" x="22" y="20" width="52" height="24"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <action selector="colorAction:" target="-2" id="308"/>
+                                    </connections>
+                                </colorWell>
+                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="299">
+                                    <rect key="frame" x="17" y="57" width="71" height="14"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" title="Nib-Based:" id="100299">
+                                        <font key="font" metaFont="smallSystem"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="300">
+                                    <rect key="frame" x="108" y="20" width="52" height="24"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </customView>
+                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="301">
+                                    <rect key="frame" x="98" y="54" width="82" height="17"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Code-Based:" id="100301">
+                                        <font key="font" metaFont="smallSystem"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                            </subviews>
+                        </view>
+                    </box>
+                    <box fixedFrame="YES" title="NSLevelIndicator" translatesAutoresizingMaskIntoConstraints="NO" id="316">
+                        <rect key="frame" x="386" y="16" width="309" height="129"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <view key="contentView" id="Wnm-Sf-6EC">
+                            <rect key="frame" x="2" y="2" width="305" height="112"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <levelIndicator verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="311">
+                                    <rect key="frame" x="91" y="73" width="179" height="25"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <levelIndicatorCell key="cell" alignment="left" maxValue="10" warningValue="5" criticalValue="8" numberOfMajorTickMarks="4" numberOfTickMarks="7" id="100311"/>
+                                    <connections>
+                                        <action selector="levelAction:" target="-2" id="326"/>
+                                    </connections>
+                                </levelIndicator>
+                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="312">
+                                    <rect key="frame" x="18" y="79" width="72" height="14"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Nib-Based:" id="100312">
+                                        <font key="font" metaFont="smallSystem"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="313">
+                                    <rect key="frame" x="10" y="45" width="81" height="14"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Code-Based:" id="100313">
+                                        <font key="font" metaFont="smallSystem"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="314">
+                                    <rect key="frame" x="91" y="38" width="179" height="25"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </customView>
+                                <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="315">
+                                    <rect key="frame" x="277" y="54" width="19" height="27"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <stepperCell key="cell" continuous="YES" alignment="left" maxValue="10" valueWraps="YES" id="100315"/>
+                                    <connections>
+                                        <action selector="levelAdjustAction:" target="-2" id="321"/>
+                                    </connections>
+                                </stepper>
+                                <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="335">
+                                    <rect key="frame" x="38" y="7" width="264" height="22"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <popUpButtonCell key="cell" type="push" title="NSDiscreteCapacityLevelIndicatorStyle" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" tag="2" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="337" id="100335">
+                                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="smallSystem"/>
+                                        <menu key="menu" title="OtherViews" id="336">
+                                            <items>
+                                                <menuItem title="NSRelevancyLevelIndicatorStyle" id="338"/>
+                                                <menuItem title="NSContinuousCapacityLevelIndicatorStyle" tag="1" id="339"/>
+                                                <menuItem title="NSDiscreteCapacityLevelIndicatorStyle" state="on" tag="2" id="337"/>
+                                                <menuItem title="NSRatingLevelIndicatorStyle" tag="3" id="340"/>
+                                            </items>
+                                        </menu>
+                                    </popUpButtonCell>
+                                    <connections>
+                                        <action selector="setStyleAction:" target="-2" id="343"/>
+                                    </connections>
+                                </popUpButton>
+                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="342">
+                                    <rect key="frame" x="3" y="12" width="39" height="14"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Style:" id="100342">
+                                        <font key="font" metaFont="smallSystem"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                            </subviews>
+                        </view>
+                    </box>
+                </subviews>
+            </view>
+            <point key="canvasLocation" x="140.5" y="162"/>
+        </window>
+        <menu title="Menu" id="199" userLabel="Menu (Menu)">
+            <items>
+                <menuItem title="Now is the time" tag="1" id="200">
+                    <connections>
+                        <action selector="popupAction:" target="-2" id="240"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="For all good programmers" tag="2" id="201">
+                    <connections>
+                        <action selector="popupAction:" target="-2" id="241"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="To come to serve their code" tag="3" id="202">
+                    <connections>
+                        <action selector="popupAction:" target="-2" id="242"/>
+                    </connections>
+                </menuItem>
+            </items>
+        </menu>
+    </objects>
+    <resources>
+        <image name="moof" width="39" height="32"/>
+        <image name="moof2" width="39" height="32"/>
+        <sound name="Pop"/>
+    </resources>
+</document>

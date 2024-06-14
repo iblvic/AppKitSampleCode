@@ -97,6 +97,7 @@ extension OutlineViewController: CustomMenuDelegate {
  			representedObject: The set of rows to act on.
  	*/
     func outlineViewMenuForRows(_ outlineView: NSOutlineView, rows: IndexSet) -> NSMenu? {
+        print("\(#function)")
         let contextMenu = NSMenu(title: "")
         
         // For multiple selected rows, you only offer the remove command.

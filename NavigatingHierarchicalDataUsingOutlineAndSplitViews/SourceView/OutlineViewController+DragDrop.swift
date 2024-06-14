@@ -26,6 +26,7 @@ extension OutlineViewController: NSFilePromiseProviderDelegate {
     
     // The system calls this before completing the drag. Return the base filename.
     func filePromiseProvider(_ filePromiseProvider: NSFilePromiseProvider, fileNameForType fileType: String) -> String {
+        print("\(#function)")
         // Default to using "Untitled" for the file.
         var title = NSLocalizedString("untitled string", comment: "")
         
@@ -43,6 +44,7 @@ extension OutlineViewController: NSFilePromiseProviderDelegate {
 		Write the promised fiie. You only write out image documents. Be sure to call the completion handler.
  	*/
     func filePromiseProvider(_ filePromiseProvider: NSFilePromiseProvider, writePromiseTo url: URL, completionHandler: @escaping (Error?) -> Void) {
+        print("\(#function)")
         if let dragURL = NodePasteboardWriter.urlFromFilePromiseProvider(filePromiseProvider) {
             // You have a URL for this node.
             if dragURL.isImage {
@@ -107,6 +109,7 @@ extension OutlineViewController: NSOutlineViewDataSource {
   		The system calls this for each dragged item in the selection.
 	*/
     func outlineView(_ outlineView: NSOutlineView, pasteboardWriterForItem item: Any) -> NSPasteboardWriting? {
+        print("\(#function)")
         guard let dragNode = OutlineViewController.node(from: item) else { return nil }
         
         let rowIdx = outlineView.row(forItem: item)
@@ -145,7 +148,7 @@ extension OutlineViewController: NSOutlineViewDataSource {
                 NodePasteboardWriter.UserInfoKeys.row: rowIdx,
                 NodePasteboardWriter.UserInfoKeys.url: urlString,
                 NodePasteboardWriter.UserInfoKeys.name: dragNode.title
-            ]
+            ] as [String : Any]
             return provider
         } else {
             // The node isn't file-promised because it's a directory or a nonimage file.
@@ -192,6 +195,7 @@ extension OutlineViewController: NSOutlineViewDataSource {
                      validateDrop info: NSDraggingInfo,
                      proposedItem item: Any?, // The place the drop is hovering over.
                      proposedChildIndex index: Int) -> NSDragOperation { // The child index the drop is hovering over.
+        print("\(#function)")
         var result = NSDragOperation()
         
         guard index != -1, 	// Don't allow dropping on a child.
@@ -345,6 +349,7 @@ extension OutlineViewController: NSOutlineViewDataSource {
                      acceptDrop info: NSDraggingInfo,
                      item targetItem: Any?,
                      childIndex index: Int) -> Bool {
+        print("\(#function)")
         // Find the index path to insert the dropped objects.
         if let dropIndexPath = droppedIndexPath(item: targetItem, childIndex: index) {
             // Check the dragging type.
@@ -366,6 +371,7 @@ extension OutlineViewController: NSOutlineViewDataSource {
                      draggingSession session: NSDraggingSession,
                      endedAt screenPoint: NSPoint,
                      operation: NSDragOperation) {
+        print("\(#function)")
         if operation == .delete,
             let items = session.draggingPasteboard.pasteboardItems {
             var itemsToRemove = [Node]()

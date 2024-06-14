@@ -16,6 +16,7 @@ extension OutlineViewController {
 
     /// The key paths for window restoration (including the view controller).
     override class var restorableStateKeyPaths: [String] {
+        print("\(#function)")
         var keys = super.restorableStateKeyPaths
         keys.append(savedSelectionKey)
         return keys
@@ -23,6 +24,7 @@ extension OutlineViewController {
 
     /// An encode state that helps save the restorable state of this view controller.
     override func encodeRestorableState(with coder: NSCoder) {
+        print("\(#function)")
         coder.encode(treeController.selectionIndexPaths, forKey: OutlineViewController.savedSelectionKey)
         super.encodeRestorableState(with: coder)
     }
@@ -32,6 +34,7 @@ extension OutlineViewController {
         selection restoration works if you choose Option-Command-Quit.
     */
     override func restoreState(with coder: NSCoder) {
+        print("\(#function)")
         super.restoreState(with: coder)
         
         // Restore the selected indexPaths.

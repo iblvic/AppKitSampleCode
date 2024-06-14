@@ -38,6 +38,7 @@ extension OutlineViewController {
      */
 /// - Tag: RestoreExpansion
     func outlineView(_ outlineView: NSOutlineView, itemForPersistentObject object: Any) -> Any? {
+        print("\(#function)")
         let node = nodeFromIdentifier(anObject: object)  // The incoming object is the identifier.
         return node
     }
@@ -47,6 +48,7 @@ extension OutlineViewController {
      */
 /// - Tag: EncodeExpansion
     func outlineView(_ outlineView: NSOutlineView, persistentObjectForItem item: Any?) -> Any? {
+        print("\(#function)")
         let node = OutlineViewController.node(from: item!)
         return node?.identifier // The outgoing object is the identifier.
     }

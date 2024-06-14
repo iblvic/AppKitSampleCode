@@ -11,12 +11,14 @@ extension OutlineViewController: NSOutlineViewDelegate {
     
     // Is the outline view item a group node? Not a folder but a group, with Hide/Show buttons.
     func outlineView(_ outlineView: NSOutlineView, isGroupItem item: Any) -> Bool {
+        print("\(#function)")
         let node = OutlineViewController.node(from: item)
         return node!.isSpecialGroup
     }
     
     // Should you select the outline view item? No selection for special groupings or separators.
     func outlineView(_ outlineView: NSOutlineView, shouldSelectItem item: Any) -> Bool {
+        print("\(#function)")
         if let node = OutlineViewController.node(from: item) {
             return !node.isSpecialGroup && !node.isSeparator
         } else {
@@ -27,7 +29,7 @@ extension OutlineViewController: NSOutlineViewDelegate {
     // What should be the row height of an outline view item?
     func outlineView(_ outlineView: NSOutlineView, heightOfRowByItem item: Any) -> CGFloat {
         var rowHeight = outlineView.rowHeight
-        
+        print("\(#function)")
         guard let node = OutlineViewController.node(from: item) else { return rowHeight }
 
         if node.isSeparator {
@@ -38,6 +40,7 @@ extension OutlineViewController: NSOutlineViewDelegate {
     }
     
     func outlineView(_ outlineView: NSOutlineView, viewFor tableColumn: NSTableColumn?, item: Any) -> NSView? {
+        print("\(#function)")
         var view: NSTableCellView?
         
         guard let node = OutlineViewController.node(from: item) else { return view }
@@ -72,6 +75,7 @@ extension OutlineViewController: NSOutlineViewDelegate {
     
     // The user inserted an outline view row.
     func outlineView(_ outlineView: NSOutlineView, didAdd rowView: NSTableRowView, forRow row: Int) {
+        print("\(#function)")
         // Are you adding a newly inserted row that needs a new name?
         if rowToAdd != -1 {
             // Force-edit the newly added row's name.
