@@ -12,8 +12,9 @@ import UniformTypeIdentifiers // for UTType
 
 extension ViewController: NSTableViewDataSource {
     
-    // A PhotoItem in our table is being dragged for this given row, provide the pasteboard writer for this item.
+//     A PhotoItem in our table is being dragged for this given row, provide the pasteboard writer for this item.
     func tableView(_ tableView: NSTableView, pasteboardWriterForRow row: Int) -> NSPasteboardWriting? {
+        print("--->\(#function),\(row)")
         /** Return a custom NSFilePromiseProvider.
             Here we provide a custom provider, offering the row to the drag object, and it's URL.
         */

@@ -42,7 +42,7 @@ class ViewController: NSViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
+		print("types:\(NSFilePromiseReceiver.readableDraggedTypes)")
         setupProgressIndicator()
         
         tableView.dataSource = self // Necessary for drag and drop.
